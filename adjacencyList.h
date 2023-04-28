@@ -33,7 +33,7 @@ public:
     void printFindName(map<int, pair<string, vector<string>>> nameList);
 };
 
-// inserts into graph
+// inserts into the graph
 void AdjacencyList::insert(int year, string name, vector<string> genre) {
     for (int i = 0; i < genre.size(); i++) {
         if (!graph.count(year)) {
@@ -230,3 +230,4 @@ void AdjacencyList::printFindName(map<int, pair<string, vector<string>>> nameLis
         }
     }
 }
+
