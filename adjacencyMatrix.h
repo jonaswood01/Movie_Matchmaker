@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
+#include <algorithm>
 using namespace std;
 
 class AdjacencyMatrix {
@@ -225,3 +226,4 @@ void AdjacencyMatrix::printFindName(map<int, pair<string, vector<string>>> nameL
         }
     }
 }
+
