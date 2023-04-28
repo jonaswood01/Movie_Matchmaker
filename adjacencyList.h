@@ -1,3 +1,6 @@
+// 1984 -- Group 84
+// Members: Jackie Wu, Jonas Wood, Victoria App
+
 #pragma once
 #include <iostream>
 #include <string>
