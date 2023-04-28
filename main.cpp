@@ -47,17 +47,6 @@ int main() {
         matrix.insert(time, name, genre);
     }
 
-    // list.printTimeSpan();
-    // list.print(list.movieGenre());
-    // list.print(list.findYear(1894));
-    // list.print(list.findGenre("Comedy"));
-    // list.printFindName(list.findName("Miss Jerry"));
-    // matrix.printTimeSpan();
-    // matrix.print(matrix.movieGenre());
-    // matrix.print(matrix.findYear(1894));
-    // matrix.print(matrix.findGenre("Comedy"));
-    // matrix.printFindName(matrix.findName("Miss Jerry"));
-
     cout << "\nWelcome to Movie Matchmaker!" << endl;
     cout << "\nAfter inputting some desired criteria and some movie ratings," << endl;
     cout << "your movie recommendations will be tailored to you.\n" << endl;
@@ -102,25 +91,6 @@ int main() {
         for (auto j = i->second.begin(); j != i->second.end(); j++) {
             for (auto k = j->second.begin(); k != j->second.end(); k++) {
                 if ( (j->first == userGenre) && (i->first >= userStartYear && i->first <= userEndYear) ) {
-                    //userPrefList.userGraph[i->first] = list.graph[i->first];
-                    //userPrefList.userGraph[i->first][j->first] = j->second;
-                    //userPrefList.userGraph.insert(*i);
-                    /*
-                    auto yearIter = userPrefList.userGraph.find(i->first);
-                    if (yearIter == userPrefList.userGraph.end()) {
-                        userPrefList.userGraph.emplace(i->first, std::vector<std::pair<std::string, int>>());
-                    }
-                    userPrefList.userGraph[i->first].push_back(*j);
-                    */
-
-                    //cout << "score!" << endl;
-
-                    // cout << i->first << endl;
-                    // cout << j->first << endl;
-                    // cout << *k << endl;
-
-                    //userPrefList[*i].push_back(make_pair(*j, push_back(*k));
-
                     userPrefList.copyToUserGraph(i->first, j->first, *k, -1);
                 }
             }
@@ -166,18 +136,7 @@ int main() {
                     }
                     break;
                 }
-            }
-
-            //userPrefList.userGraph[random_year][userGenre]
-
-            /*
-            int random_genre = rand() % movies.size();
-            pair<string, vector<pair<string, int>>> genre_movies = movies[random_genre];
-
-            vector<pair<string, int>> genre_movie_ratings = genre_movies.second;
-            int random_movie = rand() % genre_movie_ratings.size();
-            pair<string, int> movie_rating = genre_movie_ratings[random_movie];
-            */                
+            }                
         }
     }
 
@@ -191,13 +150,10 @@ int main() {
         }
     }
 
-    // Sort the vector of movie ratings in descending order
     sort(highestUserRatings.begin(), highestUserRatings.end(), [](const pair<string, int>& a, const pair<string, int>& b) {
         return a.second > b.second;
     });
-    //sort(highestUserRatings.rbegin(), highestUserRatings.rend());
 
-    // Print the top 10 movie names associated with the highest ratings
     cout << "\nHere's your top 10 movie recommendations!\n" << endl;
     cout << "Movie and Rating:" << endl;
 
@@ -210,27 +166,6 @@ int main() {
         count++;
     }
 
-    /*
-    for (auto& year_movies : userPrefList.userGraph) {
-        for (auto& genre_movies : year_movies.second) {
-            for (auto& movie_rating : genre_movies.second) {
-                if (count >= 10) {
-                    break;
-                }
-                if (movie_rating.second == highestUserRatings[count]) {
-                    cout << movie_rating.first << " (" << movie_rating.second << ")\n";
-                    count++;
-                }
-            }
-            if (count >= 10) {
-                break;
-            }
-        }
-        if (count >= 10) {
-            break;
-        }
-    }
-    */
-
     return 0;
 }
+
